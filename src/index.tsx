@@ -244,7 +244,11 @@ const ModalizeBase = (
     }
 
     if (panGestureAnimatedValue && (alwaysOpenValue || snapPoint)) {
-      toPanValue = 0;
+      if(dest === 'top') {
+        toPanValue = 1;
+      } else {
+        toPanValue = 0;
+      }
     } else if (
       panGestureAnimatedValue &&
       !alwaysOpenValue &&
